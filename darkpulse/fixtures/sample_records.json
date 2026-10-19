@@ -1,0 +1,136 @@
+{
+  "records": [
+    {
+      "source": "nvd",
+      "source_record_id": "CVE-2024-3400",
+      "record_type": "vulnerability",
+      "title": "CVE-2024-3400: PAN-OS GlobalProtect command injection",
+      "text": "CVE-2024-3400 is a command injection vulnerability in the GlobalProtect feature of Palo Alto Networks PAN-OS software (CVSS 10.0) affecting PAN-OS 10.2, PAN-OS 11.0, and PAN-OS 11.1. Exploitation is confirmed in the wild by threat actor UTA0218 using a custom malware loader. Indicators: 203.0.113.66, 198.51.100.23, update-pan-os.services[.]com. Operation MidnightEclipse.",
+      "published_at": "2026-09-12T08:30:00Z",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3400",
+      "labels": ["cve", "kev"],
+      "metadata": {"cvss": 10.0, "status": "Analyzed"}
+    },
+    {
+      "source": "cisa_kev",
+      "source_record_id": "CVE-2024-3400",
+      "record_type": "exploited",
+      "title": "KEV: CVE-2024-3400 - Palo Alto Networks PAN-OS",
+      "text": "Palo Alto Networks PAN-OS GlobalProtect command injection. CISA reports evidence of active exploitation of CVE-2024-3400 by UTA0218. Known ransomware campaign use: Known. Required action: apply updates per vendor instructions.",
+      "published_at": "2026-09-14T10:00:00Z",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "labels": ["kev", "exploited"],
+      "metadata": {"vendor": "Palo Alto Networks", "product": "PAN-OS", "known_ransomware": "Known"}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "midnighteclipse-panos-writeup",
+      "record_type": "article",
+      "title": "Operation MidnightEclipse: UTA0218 exploits CVE-2024-3400 in PAN-OS GlobalProtect",
+      "text": "Researchers observed threat actor UTA0218 exploiting CVE-2024-3400 (CVSS 10.0) in Palo Alto Networks PAN-OS GlobalProtect to deploy a Python-based malware loader and the Upsnake implant. Related infrastructure: 203.0.113.66, cdn[.]pan-osc-update[.]com, hashes 44d88612fea8a8f36de82e1278abb02f and e6ff1bf08f0f9c7d3f4c50f0e2a710d7c6a9f1b012d9c1e0a2b3c4d5e6f70819. The group Palo Alto Networks patched PAN-OS 11.1.",
+      "published_at": "2026-09-15T14:00:00Z",
+      "url": "https://example.com/midnighteclipse",
+      "labels": ["feed"],
+      "metadata": {"feed": "fixture"}
+    },
+    {
+      "source": "nvd",
+      "source_record_id": "CVE-2023-4966",
+      "record_type": "vulnerability",
+      "title": "CVE-2023-4966: Citrix NetScaler sensitive information disclosure",
+      "text": "CVE-2023-4966 (Citrix Bleed) is a sensitive information disclosure vulnerability in Citrix NetScaler ADC and NetScaler Gateway, CVSS 9.4. Exploited by threat actor LockBit affiliates; ransomware campaign use Known. References: 192.0.2.44, 198.51.100.7.",
+      "published_at": "2026-09-13T09:00:00Z",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4966",
+      "labels": ["cve", "kev"],
+      "metadata": {"cvss": 9.4}
+    },
+    {
+      "source": "cisa_kev",
+      "source_record_id": "CVE-2023-4966",
+      "record_type": "exploited",
+      "title": "KEV: CVE-2023-4966 - Citrix NetScaler ADC",
+      "text": "Citrix NetScaler ADC and Gateway sensitive information disclosure (Citrix Bleed). CISA KEV lists CVE-2023-4966 with known ransomware campaign use. Required action: upgrade NetScaler ADC/Gateway appliances.",
+      "published_at": "2026-09-14T11:30:00Z",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "labels": ["kev", "exploited"],
+      "metadata": {"vendor": "Citrix", "product": "NetScaler ADC", "known_ransomware": "Known"}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "citrix-bleed-lockbit-analysis",
+      "record_type": "article",
+      "title": "Citrix Bleed CVE-2023-4966 abused by LockBit affiliates for session hijacking",
+      "text": "Threat actors affiliated with the LockBit ransomware operation exploited Citrix Bleed CVE-2023-4966 in Citrix NetScaler appliances to hijack privileged sessions at a North American organization. Incident disclosure cites 45.33.32.156 and dropper hash 275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2 (MD5), sha256 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08.",
+      "published_at": "2026-09-16T16:20:00Z",
+      "url": "https://example.com/citrix-bleed",
+      "labels": ["feed"],
+      "metadata": {"feed": "fixture"}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "ivanti-connect-secure-zero-day",
+      "record_type": "advisory",
+      "title": "Ivanti Connect Secure zero-day CVE-2025-0282 mass exploited",
+      "text": "Threat actor UNC5337 (with suspected Mustang Panda infrastructure overlap) conducted mass exploitation of Ivanti Connect Secure VPN CVE-2025-0282 (CVSS 9.0). Malware family DryHook and PhaseJam web shells deployed. Microsoft, Google Threat Intelligence Group and Mandiant tracking the incident. CISA added CVE-2025-0282 to KEV; attacker infrastructure 45.33.32.1, 104.28.219.72.",
+      "published_at": "2026-09-16T08:00:00Z",
+      "url": "https://example.com/ivanti-cs",
+      "labels": ["feed"],
+      "metadata": {"cvss": 9.0}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "emotet-resurgence-report",
+      "record_type": "article",
+      "title": "Emotet botnet resurgence distributes TrickBot and Qakbot loaders",
+      "text": "The Emotet botnet (aka Heodo) has resumed malspam campaigns distributing TrickBot and Qakbot (Qbot) loaders, frequently preceding Ryuk and Conti ransomware intrusions attributed to Wizard Spider and FIN7 infrastructure reuse. Domains: cdn[.]emotet-updates[.]xyz, mail[.]trickbot-cdn[.]top. Command and control: 45.33.32.156.",
+      "published_at": "2026-09-17T12:00:00Z",
+      "url": "https://example.com/emotet",
+      "labels": ["feed"],
+      "metadata": {}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "scattered-spider-social-engineering",
+      "record_type": "article",
+      "title": "Scattered Spider (0ktapus) targets telecom with help-desk social engineering",
+      "text": "FBI and CISA warn that Scattered Spider, also tracked as UNC3944 and 0ktapus, is using AI-enhanced phishing and help-desk social engineering against telecommunications organizations. The group deploys the Radar malware family and maintains infrastructure at api[.]october-vibes[.]online and 185.220.101.4.",
+      "published_at": "2026-09-18T09:45:00Z",
+      "url": "https://example.com/scattered-spider",
+      "labels": ["feed"],
+      "metadata": {}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "sharepoint-toolshell-advisory",
+      "record_type": "advisory",
+      "title": "Microsoft SharePoint ToolShell campaign CVE-2025-53770 actively exploited",
+      "text": "Microsoft reports China-nexus threat actor Linen Typhoon and Violet Typhoon exploiting on-premises SharePoint CVE-2025-53770 (ToolShell, CVSS 9.8) to steal MachineKey material. Mandiant observed spurious spikes in scanning of SharePoint servers; CISA KEV listing expected. Infrastructure: 155.94.164.35, 104.152.52.24, update[.]sharepoint-ice[.]com.",
+      "published_at": "2026-09-18T15:30:00Z",
+      "url": "https://example.com/toolshell",
+      "labels": ["feed"],
+      "metadata": {"cvss": 9.8}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "akira-ransomware-esxi",
+      "record_type": "article",
+      "title": "Akira ransomware escalates VMware ESXi targeting via VPN flaws",
+      "text": "Akira ransomware actors are escalating attacks on VMware ESXi and vCenter environments, chaining older Fortinet FortiOS and SonicWall SSL-VPN vulnerabilities for initial access. CISA warns of increased incident volume. Samples: sha256 0a1b2c3d4e5f60718293a4b5c6d7e8f900112233445566778899aabbccddeeff.",
+      "published_at": "2026-09-19T13:10:00Z",
+      "url": "https://example.com/akira",
+      "labels": ["feed"],
+      "metadata": {}
+    },
+    {
+      "source": "rss",
+      "source_record_id": "volt-typhoon-living-off-land",
+      "record_type": "article",
+      "title": "Volt Typhoon persists in critical infrastructure with living-off-the-land techniques",
+      "text": "CISA, FBI, NSA and international partners released a joint advisory on Volt Typhoon (VOLTEDGE) pre-positioning inside US critical infrastructure organizations. The threat actor abuses Fortinet Fortigate and Ivanti Pulse Connect VPN edge devices; no malware family deployed, relying on Windows Management Instrumentation. Advisory references cisa[.]gov and us-cert[.]cisa[.]gov.",
+      "published_at": "2026-09-20T10:00:00Z",
+      "url": "https://example.com/volt-typhoon",
+      "labels": ["feed"],
+      "metadata": {}
+    }
+  ]
+}
