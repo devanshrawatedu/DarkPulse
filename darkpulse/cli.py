@@ -4,14 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
-from pathlib import Path
 
 from .config import get_settings
 from .pipeline import Pipeline
 from .utils import configure_logging
-
-DASHBOARD_APP = Path(__file__).resolve().parent / "dashboard" / "app.py"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -39,7 +35,20 @@ def build_parser() -> argparse.ArgumentParser:
     )
     demo_cmd.add_argument("--top", type=int, default=10)
 
-    subparsers.add_parser("dashboard", help="launch the Streamlit dashboard")
+    dashboard_cmd = subparsers.add_parser(
+        "dashboard", help="launch the web dashboard (FastAPI + custom UI)"
+    )
+    dashboard_cmd.add_argument("--host", default="127.0.0.1")
+    dashboard_cmd.add_argument("--port", type=int, default=8000)
+    dashboard_cmd.add_argument(
+        "--offline", action="store_true", help="load bundled fixtures instead of live sources"
+    )
+    dashboard_cmd.add_argument(
+        "--live", action="store_true", help="force live collection even if DARKPULSE_OFFLINE is set"
+    )
+    dashboard_cmd.add_argument(
+        "--no-browser", action="store_true", help="do not open a browser window"
+    )
     return parser
 
 
@@ -49,7 +58,7 @@ def main(argv: list[str] | None = None) -> int:
     configure_logging(settings.log_level)
 
     if args.command == "dashboard":
-        return _run_dashboard()
+        return _run_dashboard(args, settings)
 
     pipeline = Pipeline(settings)
 
@@ -75,12 +84,26 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def _run_dashboard() -> int:
-    from streamlit.web import cli as streamlit_cli
+def _run_dashboard(args: argparse.Namespace, settings) -> int:
+    try:
+        from .web.server import serve
+    except ImportError:
+        print(
+            "The dashboard needs FastAPI and uvicorn.\n"
+            "Install them with:  pip install -e \".[web]\"",
+        )
+        return 1
 
-    sys.argv = ["streamlit", "run", str(DASHBOARD_APP)]
-    streamlit_cli.main()
-    return 0
+    if args.live:
+        settings.offline = False
+    elif args.offline:
+        settings.offline = True
+    return serve(
+        settings,
+        host=args.host,
+        port=args.port,
+        open_browser=not args.no_browser,
+    )
 
 
 def _print_top(pipeline: Pipeline, count: int) -> None:

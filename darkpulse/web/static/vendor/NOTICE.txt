@@ -1,0 +1,12 @@
+Bundled third-party assets
+==========================
+
+Apache ECharts 5.5.1 (echarts.min.js)
+  License: Apache License 2.0
+  Source:  https://github.com/apache/echarts
+  Copyright 2017-2024 The Apache Software Foundation
+
+Inter, Space Grotesk and JetBrains Mono (fonts/*.woff2)
+  License: SIL Open Font License 1.1
+  Source:  https://fonts.google.com
+  Latin subsets only; self-hosted so the dashboard works offline.

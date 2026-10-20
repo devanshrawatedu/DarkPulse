@@ -6,10 +6,9 @@ networkx>=3.1,<4
 feedparser>=6.0,<7
 python-dateutil>=2.8,<3
 
-# Dashboard
-streamlit>=1.32,<2
-pandas>=2.0,<3
-pyvis>=0.3.2,<1
+# Dashboard (FastAPI + custom frontend; ECharts and fonts are vendored)
+fastapi>=0.110,<1
+uvicorn>=0.29,<1
 
 # Dev
 pytest>=8.0,<10
